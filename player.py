@@ -13,6 +13,7 @@ class Player:
     def single_fire_event(self, event):
         if event.type == pg.MOUSEBUTTONDOWN:
             if event.button == 1 and not self.shot and not self.game.shotgun.reloading:
+                self.game.sound.shotgun.play()
                 self.shot = True
                 self.game.shotgun.reloading = True
 
